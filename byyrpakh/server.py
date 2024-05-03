@@ -10,7 +10,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SECRET_KEY'] = 'NzqEI!@mcV4KfP7DU'
 
 
-
+12
 socketio = SocketIO(app)
 db = SQLAlchemy(app)
 
