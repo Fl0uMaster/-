@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        Все пользователи: <br>
+
+        {% for user in users %}
+        
+            {{ user.name }} <a href="/{{user.id}}"> Подробнее.. </a>  <br>
+
+        {% endfor %}
+    </body>
+</html>

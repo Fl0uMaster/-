@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <div id="messages">
+
+            <div id="messages_history">
+
+            </div>
+
+            <input id="message_input" type="text" placeholder="Введите сообщение">
+                
+            <button id="send_button" onclick="send_message()"> Отправить! </button>
+
+        </div>
+    </body>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" 
+    integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" 
+    crossorigin="anonymous">
+    </script>
+    <script>
+        var socket = io('http://127.0.0.1:5000/');
+
+        function send_message() {
+            const msg = document.getElementById("message_input");
+
+            socket.emit("message", {data: msg.value});
+            msg.value = "";
+
+        }
+
+        socket.on('message', (a)=>{
+            document.getElementById("messages_history").innerHTML += a + `<br>`;
+        })
+    </script>
+</html>
