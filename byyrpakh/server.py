@@ -4,7 +4,7 @@ from flask_socketio import SocketIO, join_room, leave_room
 
 from datetime import datetime
 
-
+12
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SECRET_KEY'] = 'NzqEI!@mcV4KfP7DU'
